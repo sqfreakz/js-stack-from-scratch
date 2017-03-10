@@ -64,7 +64,7 @@ Jika anda ingin menambahkan terjemahan anda, silakan baca [rekomendasi terjemaha
 
 ### V2
 
-- [Indonesian](https://github.com/finly/js-stack-from-scratch) oleh [Arifin FinLy](https://github.com/finly)
+- [Bahasa Indonesia](https://github.com/finly/js-stack-from-scratch) oleh [Arifin FinLy](https://github.com/finly)
 
 Silakan periksa [terjemahan yang tersedia](https://github.com/verekia/js-stack-from-scratch/issues/147).
 
