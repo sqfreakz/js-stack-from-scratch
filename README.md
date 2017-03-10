@@ -1,4 +1,4 @@
-# JavaScript Stack from Scratch
+# JavaScript Stack dari Nol
 
 [![Build Status](https://travis-ci.org/verekia/js-stack-from-scratch.svg?branch=master)](https://travis-ci.org/verekia/js-stack-from-scratch)
 [![Release](https://img.shields.io/github/release/verekia/js-stack-from-scratch.svg?style=flat-square)](https://github.com/verekia/js-stack-from-scratch/releases)
@@ -16,23 +16,25 @@
 [![Webpack](/img/webpack-padded-90.png)](https://webpack.github.io/)
 [![Bootstrap](/img/bootstrap-padded-90.png)](http://getbootstrap.com/)
 
-Welcome to my modern JavaScript stack tutorial: **JavaScript Stack from Scratch**.
+Selamat datang di panduan JavaScript Stack modern saya: **JavaScript Stack dari Nol**.
 
-> 🎉 **This is the V2 of the tutorial, major changes happened since the 2016 release. Check the [Change Log](/CHANGELOG.md)!**
+> Panduan ini diterjemahkan dari versi aslinya di [https://github.com/verekia/js-stack-from-scratch](https://github.com/verekia/js-stack-from-scratch)
 
-This is a straight-to-the-point guide to assembling a JavaScript stack. It requires some general programming knowledge, and JavaScript basics. **It focuses on wiring tools together** and giving you the **simplest possible example** for each tool. You can see this tutorial as *a way to write your own boilerplate from scratch*. Since the goal of this tutorial is to assemble various tools, I do not go into details about how these tools work individually. Refer to their documentation or find other tutorials if you want to acquire deeper knowledge in them.
+> **Ini adalah panduan versi 2 🎉 Banyak perubahan besar sejak peluncuran tahun 2016. Lihat perubahannya di sini [Change Log](/CHANGELOG.md)!**
 
-You don't need to use this entire stack if you build a simple web page with a few JS interactions of course (a combination of Browserify/Webpack + Babel + jQuery is enough to be able to write ES6 code in different files), but if you want to build a web app that scales, and need help setting things up, this tutorial will work great for you.
+Ini adalah panduan ringkas dan tepat untuk membuat JavaScript Stack. Dibutuhkan sedikit pengetahuan pemrograman dan dasar-dasar JavaScript. **Tutorial ini akan berfokus pada penggunaan program-program pengembang secara bersamaan** dan memberikan anda **contoh-contoh sesederhana mungkin** untuk setiap program-program pengembang. Anda dapat mengimplementasikan panduan ini sebagai *metode untuk membuat boilerplate anda sendiri dari nol*. Oleh karena tujuan tutorial ini adalah untuk menggunakan program-program pendukung secara bersamaan, saya tidak akan merinci lebih lanjut bagaimana program-program tersebut bekerja satu per satu. Silakan periksa panduan masing-masing program tersebut atau carilah panduan penggunaan program-program tersebut jika anda ingin mengetahui lebih lanjut.
 
-A big chunk of the stack described in this tutorial uses React. If you are beginning and just want to learn React, [create-react-app](https://github.com/facebookincubator/create-react-app) will get you up and running with a React environment very quickly with a pre-made configuration. I would for instance recommend this approach to someone who arrives in a team that's using React and needs to catch up with a learning playground. In this tutorial you won't use a pre-made configuration, because I want you to understand everything that's happening under the hood.
+Anda tidak perlu menggunakan semua program-program pengembang yang ada di panduan ini, jika anda hanya membuat sebuah halaman web yang sederhana dengan beberapa interaksi JavaScript tentunya (kombinasi dari Browserify/Webpack + Babel + jQuery sudah cukup untuk menulis program ES6 di beberapa file), tetapi jika anda ingin membuat aplikasi web yang berskala, dan membutuhkan bantuan untuk pengaturan segala aspek aplikasi anda, tutorial ini akan sangat berguna buat anda.
 
-Code examples are available for each chapter, and you can run them all with `yarn && yarn start`. I recommend writing everything from scratch yourself by following the **step-by-step instructions** though.
+Sebagian besar dari program-program yang dijelaskan di panduan ini menggunakan React. Jika anda baru saja mengenal React atau ingin mempelajarinya, [create-react-app](https://github.com/facebookincubator/create-react-app) akan membantu anda dengan cepat memulai React dan menjalankannya  dengan pengaturan-pengaturan awal yang telah tersedia. Saya sangat merekomendasikan panduan tersebut jika anda baru saja bergabung dengan tim yang telah sebelumnya menggunakan React, sehingga anda dapat mengejar pembelajaran React dengan cepat. Di panduan ini, anda tidak akan menggunakan pengaturan yang telah tersedia, karena saya ingin anda memahami semua aspek yang akan dijalankan di dalam program.
 
-Final code available in the [JS-Stack-Boilerplate repository](https://github.com/verekia/js-stack-boilerplate), and in the [releases](https://github.com/verekia/js-stack-from-scratch/releases). There is a [live demo](https://js-stack.herokuapp.com/) too.
+Contoh-contoh program tersedia di setiap bab, dan anda dapat menjalankan seluruh program-programnya dengan perintah `yarn && yarn start`. Saya merekomendasikan anda untuk menulis sendiri seluruh program dari nol dengan mengikuti **Instruksi Langkah demo Langkah**.
 
-Works on Linux, macOS, and Windows.
+Program yang sudah selesai tersedia di [JS-Stack-Boilerplate repository](https://github.com/verekia/js-stack-boilerplate), dan di [releases](https://github.com/verekia/js-stack-from-scratch/releases). Tersedia juga [live demo](https://js-stack.herokuapp.com/).
 
-## Table of contents
+Panduan ini berlaku untuk sistem operasi Linux, macOS, dan Windows.
+
+## Daftar Isi
 
 [01 - Node, Yarn, `package.json`](/tutorial/01-node-yarn-package-json.md#readme)
 
@@ -52,19 +54,19 @@ Works on Linux, macOS, and Windows.
 
 [09 - Travis, Coveralls, Heroku](/tutorial/09-travis-coveralls-heroku.md#readme)
 
-## Coming up next
+## Yang Akan Datang
 
-Setting up your editor (Atom first), MongoDB, Progressive Web App.
+Pengaturan editor anda (terlebih dahulu Atom), MongoDB, Progressive Web App.
 
-## Translations
+## Terjemahan
 
-If you want to add your translation, please read the [translation recommendations](/how-to-translate.md) to get started!
+Jika anda ingin menambahkan terjemahan anda, silakan baca [rekomendasi terjemahan](/how-to-translate.md) untuk memulai proses penerjemahan!
 
 ### V2
 
-Your link here soon ;)
+- [Indonesian](https://github.com/finly/js-stack-from-scratch) oleh [Arifin FinLy](https://github.com/finly)
 
-Check out the [ongoing translations](https://github.com/verekia/js-stack-from-scratch/issues/147).
+Silakan periksa [terjemahan yang tersedia](https://github.com/verekia/js-stack-from-scratch/issues/147).
 
 ### V1
 
@@ -74,8 +76,8 @@ Check out the [ongoing translations](https://github.com/verekia/js-stack-from-sc
 - [Русский](https://github.com/UsulPro/js-stack-from-scratch) by [React Theming](https://github.com/sm-react/react-theming)
 - [ไทย](https://github.com/MicroBenz/js-stack-from-scratch) by [MicroBenz](https://github.com/MicroBenz)
 
-## Credits
+## Penghargaan
 
-Created by [@verekia](https://twitter.com/verekia) – [verekia.com](http://verekia.com/).
+Panduan ini dibuat oleh [@verekia](https://twitter.com/verekia) – [verekia.com](http://verekia.com/).
 
-License: MIT
+Lisensi: MIT
