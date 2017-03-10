@@ -70,11 +70,11 @@ Silakan periksa [terjemahan yang tersedia](https://github.com/verekia/js-stack-f
 
 ### V1
 
-- [中文](https://github.com/pd4d10/js-stack-from-scratch) by [@pd4d10](http://github.com/pd4d10)
-- [Italiano](https://github.com/fbertone/js-stack-from-scratch) by [Fabrizio Bertone](https://github.com/fbertone)
-- [日本語](https://github.com/takahashim/js-stack-from-scratch) by [@takahashim](https://github.com/takahashim)
-- [Русский](https://github.com/UsulPro/js-stack-from-scratch) by [React Theming](https://github.com/sm-react/react-theming)
-- [ไทย](https://github.com/MicroBenz/js-stack-from-scratch) by [MicroBenz](https://github.com/MicroBenz)
+- [中文](https://github.com/pd4d10/js-stack-from-scratch) oleh [@pd4d10](http://github.com/pd4d10)
+- [Italiano](https://github.com/fbertone/js-stack-from-scratch) oleh [Fabrizio Bertone](https://github.com/fbertone)
+- [日本語](https://github.com/takahashim/js-stack-from-scratch) oleh [@takahashim](https://github.com/takahashim)
+- [Русский](https://github.com/UsulPro/js-stack-from-scratch) oleh [React Theming](https://github.com/sm-react/react-theming)
+- [ไทย](https://github.com/MicroBenz/js-stack-from-scratch) oleh [MicroBenz](https://github.com/MicroBenz)
 
 ## Penghargaan
 
