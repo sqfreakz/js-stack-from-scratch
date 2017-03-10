@@ -1,27 +1,27 @@
 # 01 - Node, Yarn, and `package.json`
 
-Code for this chapter available [here](https://github.com/verekia/js-stack-walkthrough/tree/master/01-node-yarn-package-json).
+File program untuk bab ini tersedia di [sini](https://github.com/verekia/js-stack-walkthrough/tree/master/01-node-yarn-package-json).
 
-In this section we will set up Node, Yarn, a basic `package.json` file, and try a package.
+Di bab ini, kita akan mempersiapkan Node, Yarn, file dasar `package.json`, dan mencoba sebuah paket.
 
 ## Node
 
-> 💡 **[Node.js](https://nodejs.org/)** is a JavaScript runtime environment. It is mostly used for Back-End development, but also for general scripting. In the context of Front-End development, it can be used to perform a whole bunch of tasks like linting, testing, and assembling files.
+> 💡 **[Node.js](https://nodejs.org/)** adalah JavaScript yang berjalan dari sisi server. Umumnya itu digunakan untuk pengembangan Back-End, tetapi juga sering digunakan untuk pemrograman script secara umum. Di konteks pengembangan Front-End, Node.js dapat juga digunakan untuk pelaksanaan seluruh tugas seperti linting, testing, and penyusunan file-file.
 
-We will use Node for basically everything in this tutorial, so you're going to need it. Head to the [download page](https://nodejs.org/en/download/current/) for **macOS** or **Windows** binaries, or the [package manager installations page](https://nodejs.org/en/download/package-manager/) for Linux distributions.
+Kita akan menggunakan Node pada dasarnya untuk keseluruhan yang ada di panduan ini, jadi anda akan membutuhkannya. Kita menuju ke [halaman unduh](https://nodejs.org/en/download/current/) untuk **macOS** atau **Windows** file binari, atau [halaman installasi dengan pengelola paket](https://nodejs.org/en/download/package-manager/) untuk distribusi Linux.
 
-For instance, on **Ubuntu / Debian**, you would run the following commands to install Node:
+Contohnya, untuk **Ubuntu / Debian**, anda bisa menjalankan perintah berikut untuk menginstall Node:
 
 ```sh
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-You want any version of Node > 6.5.0.
+Anda membutuhkan Node versi 6.5.0 ke atas.
 
 ## NVM
 
-If Node is already installed, or if you want more flexibility, install NVM ([Node Version Manager](https://github.com/creationix/nvm)), and make NVM install and use the latest version of Node for you.
+Jika Node sudah terinstall, atau jika anda menginginkan fleksibilitas, anda dapat menginstall NVM ([Node Version Manager](https://github.com/creationix/nvm)), dan atur NVM untuk menginstall dan menggunakan versi terkini Node untuk anda.
 
 ## NPM
 
