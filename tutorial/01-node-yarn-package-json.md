@@ -144,4 +144,4 @@ Ada dua jenis dependensi paket, `"dependencies"` dan `"devDependencies"`:
 
 Bab selanjutnya: [02 - Babel, ES6, ESLint, Flow, Jest, Husky](02-babel-es6-eslint-flow-jest-husky.md#readme)
 
-Kembali ke [Daftar Isi](https://github.com/verekia/js-stack-from-scratch#table-of-contents).
+Kembali ke [Daftar Isi](https://github.com/finly/js-stack-from-scratch#table-of-contents).
