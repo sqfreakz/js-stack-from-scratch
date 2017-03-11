@@ -6,7 +6,7 @@ Di bab ini, kita akan mempersiapkan Node, Yarn, file dasar `package.json`, dan m
 
 ## Node
 
-> 💡 **[Node.js](https://nodejs.org/)** adalah JavaScript yang berjalan dari sisi server. Umumnya itu digunakan untuk pengembangan Back-End, tetapi juga sering digunakan untuk pemrograman script secara umum. Di konteks pengembangan Front-End, Node.js dapat juga digunakan untuk pelaksanaan seluruh tugas seperti linting, testing, and penyusunan file-file.
+> 💡 **[Node.js](https://nodejs.org/)** adalah JavaScript yang berjalan dari sisi server. Umumnya itu digunakan untuk pengembangan Back-End, tetapi juga sering digunakan untuk pemrograman script secara umum. Di konteks pengembangan Front-End, Node.js dapat juga digunakan untuk pelaksanaan seluruh tugas seperti linting, testing, dan penyusunan file-file.
 
 Kita akan menggunakan Node pada dasarnya untuk keseluruhan yang ada di panduan ini, jadi anda akan membutuhkannya. Kita menuju ke [halaman unduh](https://nodejs.org/en/download/current/) untuk **macOS** atau **Windows** file binari, atau [halaman installasi dengan pengelola paket](https://nodejs.org/en/download/package-manager/) untuk distribusi Linux.
 
@@ -25,15 +25,15 @@ Jika Node sudah terinstall, atau jika anda menginginkan fleksibilitas, anda dapa
 
 ## NPM
 
-NPM is the default package manager for Node. It is automatically installed alongside with Node. Package managers are used to install and manage packages (modules of code that you or someone else wrote). We are going to use a lot of packages in this tutorial, but we'll use Yarn, another package manager.
+NPM adalah manajer paket standar untuk Node. NPM otomatis terinstall bersamaan dengan Node. Manajer paket digunakan untuk menginstall dan mengatur paket-paket (modul-modul dari program yang anda atau orang lain tulis). Kita akan menggunakan banyak paket di panduan ini, tetapi kita akan menggunakan Yarn, manajer paket lainnya.
 
 ## Yarn
 
-> 💡 **[Yarn](https://yarnpkg.com/)** is a Node.js package manager which is much faster than NPM, has offline support, and fetches dependencies [more predictably](https://yarnpkg.com/en/docs/yarn-lock).
+> 💡 **[Yarn](https://yarnpkg.com/)** adalah manajer paket dari Node.js yang jauh lebih cepat daripada NPM, mendukung saat tidak ada koneksi internet, dan mengunduh dependensi [lebih terprediksi](https://yarnpkg.com/en/docs/yarn-lock).
 
-Since it [came out](https://code.facebook.com/posts/1840075619545360) in October 2016, it received a very quick adoption and may soon become the package manager of choice of the JavaScript community. If you want to stick to NPM you can simply replace all `yarn add` and `yarn add --dev` commands of this tutorial by `npm install --save` and `npm install --save-dev`.
+Sejak Yarn [diluncurkan](https://code.facebook.com/posts/1840075619545360) pada Oktober 2016, banyak yang begitu cepat mencoba dan menggunakannya, sehingga Yarn menjadi pilihan manajer paket di kalangan komunitas JavaScript. Jika anda tetap ingin tetap bertahan menggunakan NPM, anda dapat dengan mudah mengganti semua perintah `yarn add` dan `yarn add --dev` di panduan ini dengan `npm install --save` dan `npm install --save-dev`.
 
-Install Yarn by following the [instructions](https://yarnpkg.com/en/docs/install) for your OS. I would recommend using the **Installation Script** from the *Alternatives* tab if you are on macOS or Unix, to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
+Panduan instalasi Yarn dapat diakses di [instruksi ini](https://yarnpkg.com/en/docs/install) untuk sistem operasi anda. Saya merekomendasikan anda untuk menggunakan **Installation Script** yang ada di tab *Alternatives* jika anda menggunakan macOS atau Unix, untuk [mencegah](https://github.com/yarnpkg/yarn/issues/1505) ketergantungan pada manajer paket lainnya:
 
 ```sh
 curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -41,16 +41,16 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 
 ## `package.json`
 
-> 💡 **[package.json](https://yarnpkg.com/en/docs/package-json)** is the file used to describe and configure your JavaScript project. It contains general information (your project name, version, contributors, license, etc), configuration options for tools you use, and even a section to run *tasks*.
+> 💡 **[package.json](https://yarnpkg.com/en/docs/package-json)** adalah file yang berisi penjelasan dan pengaturan proyek JavaScript anda. File ini berisi informasi umum (nama proyek anda, versi, kontributor, lisensi, dll), opsi-opsi konfigurasi untuk program yang anda gunakan, bahkan bagian untuk menjalankan *tugas-tugas*.
 
-- Create a new folder to work in, and `cd` in it.
-- Run `yarn init` and answer the questions (`yarn init -y` to skip all questions), to generate a `package.json` file automatically.
+- Buatlah sebuah folder baru untuk proyek anda, dan jalankan perintah `cd` untuk masuk ke folder tersebut.
+- Jalankan perintah `yarn init` dan jawab semua pertanyaannya (`yarn init -y` untuk melewati semua pertanyaan), untuk membuat file `package.json` secara otomatis.
 
-Here is the basic `package.json` I'll use in this tutorial:
+Ini adalah isi standar dari file `package.json`. Saya akan menggunakannya di dalam panduan ini:
 
 ```json
 {
-  "name": "your-project",
+  "name": "proyek-anda",
   "version": "1.0.0",
   "license": "MIT"
 }
@@ -58,21 +58,21 @@ Here is the basic `package.json` I'll use in this tutorial:
 
 ## Hello World
 
-- Create an `index.js` file containing `console.log('Hello world')`
+- Buat sebuah file `index.js` yang berisi `console.log('Hello world')`
 
-🏁 Run `node .` in this folder (`index.js` is the default file Node looks for in a folder). It should print "Hello world".
+🏁 Jalankan perintah `node .` di folder ini (`index.js` adalah file standar yang akan dilihat oleh Node.js di sebuah folder). Ini akan menghasilkan keluaran "Hello world".
 
-**Note**: See that 🏁 racing flag emoji? I will use it every time you reach a **checkpoint**. We are sometimes going to make a lot of changes in a row, and your code may not work until you reach the next checkpoint.
+**Catatan**: Anda lihat simbol 🏁 emoji bendera balapan ini? Saya akan menggunakan simbol ini setiap saat anda mencapai sebuah **checkpoint**. Kadang-kadang kita akan membuat banyak perubahan berturut-turut, sehingga program anda tidak akan berjalan sampai anda mencapai checkpoint berikutnya.
 
-## `start` script
+## Script `start`
 
-Running `node .` to execute our program is a bit too low-level. We are going to use an NPM/Yarn script to trigger the execution of that code instead. That will give us a nice abstraction to be able to always use `yarn start`, even when our program gets more complicated.
+Dengan menjalankan perintah `node .` untuk mengeksekusi program kita, itu sangat terlalu rendah levelnya. Sebagai gantinya, kita akan menggunakan script NPM/Yarn untuk memicu pengeksekusian program kita. Ini akan memberikan kita sebuah abstraksi yang bagus untuk selalu dapat menggunakan `yarn start`, bahkan ketika program kita menjadi lebih rumit.
 
-- In `package.json`, add a `scripts` object like so:
+- Di `package.json`, tambahkan sebuah objek `scripts` seperti berikut:
 
 ```json
 {
-  "name": "your-project",
+  "name": "proyek-anda",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -81,42 +81,42 @@ Running `node .` to execute our program is a bit too low-level. We are going to 
 }
 ```
 
-`start` is the name we give to the *task* that will run our program. We are going to create a lot of different tasks in this `scripts` object throughout this tutorial. `start` is typically the name given to the default task of an application. Some other standard task names are `stop` and `test`.
+`start` adalah nama yang kita berikan untuk *tugas* yang akan menjalankan aplikasi kita. Kita akan membuat banyak tugas-tugas berbeda di objek `scripts` di sepanjang panduan ini. Nama `start` ini khususnya diberikan untuk tugas standar dari sebuah aplikasi. Beberapa nama standar lainnya adalah `stop` dan `test`.
 
-`package.json` must be a valid JSON file, which means that you cannot have trailing commas. So be careful when editing manually your `package.json` file.
+`package.json` harus sebuah file JSON yang benar, yang berarti tidak boleh ada koma di bagian yang paling akhir. Jadi anda harus berhati-hati saat mengedit file `package.json` anda secara manual.
 
-🏁 Run `yarn start`. It should print `Hello world`.
+🏁 Jalankan perintah `yarn start`. Itu akan menghasilkan keluaran `Hello world`.
 
-## Git and `.gitignore`
+## Git dan `.gitignore`
 
-- Initialize a Git repository with `git init`
+- Inisialisasi sebuah repositori Git dengan `git init`
 
-- Create a `.gitignore` file and add the following to it:
+- Buatlah sebuah file `.gitignore` dan tambahkan kode berikut ini:
 
 ```gitignore
 .DS_Store
 /*.log
 ```
 
-`.DS_Store` files are auto-generated macOS files that you should never have in your repository.
+`.DS_Store` adalah file-file yang dihasilkan secara otomatis oleh macOS yang tidak seharusnya ada di dalam sebuah repositori.
 
-`npm-debug.log` and `yarn-error.log` are files that are created when your package manager encounters an error, we don't want them versioned in our repository.
+`npm-debug.log` dan `yarn-error.log` adalah file-file yang dihasilkan ketika manajer paket anda menemukan kesalahan, kita juga tidak mau file-file ini diversikan di repositori kita.
 
-## Installing and using a package
+## Instalasi dan Penggunaan Sebuah Paket
 
-In this section we will install and use a package. A "package" is simply a piece of code that someone else wrote, and that you can use in your own code. It can be anything. Here, we're going to try a package that helps you manipulate colors for instance.
+Di bagian ini, kita akan menginstal dan menggunakan sebuah paket. Sebuah "paket" sederhananya adalah sepotong program yang orang lain tulis, dan anda dapat menggunakannya di kode anda. Itu bisa apa saja. Di sini misalnya, kita akan mencoba sebuah paket yang membantu kita memanipulasi warna-warna.
 
-- Install the community-made package called `color` by running `yarn add color`
+- Instal sebuah paket yang dibuat oleh komunitas, bernama `color` dengan menjalankan perintah `yarn add color`
 
-Open `package.json` to see how Yarn automatically added `color` in  `dependencies`.
+Buka file `package.json` untuk melihat bagaimana Yarn secara otomatis menambahkan `color` di bagian  `dependencies`.
 
-A `node_modules` folder has been created to store the package.
+Sebuah folder `node_modules` dihasilkan untuk menyimpan paket-paket.
 
-- Add `node_modules/` to your `.gitignore`
+- Tambahkan `node_modules/` ke dalam file `.gitignore` anda.
 
-You will also notice that a `yarn.lock` file got generated by Yarn. You should commit this file to your repository, as it will ensure that everyone in your team uses the same version of your packages. If you're sticking to NPM instead of Yarn, the equivalent of this file is the *shrinkwrap*.
+Anda juga akan melihat sebuah file `yarn.lock` dihasilkan oleh Yarn. Anda harus mengkomit file ini ke dalam repositori anda, sehinggal anda dan tim anda menggunakan paket-paket dengan versi yang sama. Jika anda tetap ingin menggunakan NPM daripada Yarn, file yang sama untuk ini adalah *shrinkwrap*.
 
-- Write the following to your `index.js` file:
+- Tulis kode berikut ini ke dalam file `index.js` anda:
 
 ```js
 const color = require('color')
@@ -126,22 +126,22 @@ const redHexa = color({ r: 255, g: 0, b: 0 }).hex()
 console.log(redHexa)
 ```
 
-🏁 Run `yarn start`. It should print `#FF0000`.
+🏁 Jalankan perintah `yarn start`. Itu akan menghasilkan keluaran `#FF0000`.
 
-Congratulations, you installed and used a package!
+Selamat, anda telah menginstal dan menggunakan sebuah paket!
 
-`color` is just used in this section to teach you how to use a simple package. We won't need it anymore, so you can uninstall it:
+Di bagian ini, `color` hanya digunakan untuk memandu anda bagaimana menggunakan sebuah paket sederhana. Kita tidak akan membutuhkannya lagi, jadi kita bisa menghapus paket itu:
 
-- Run `yarn remove color`
+- Jalankan `yarn remove color`
 
-## Two kinds of dependencies
+## Dua Jenis Dependensi
 
-There are two kinds of package dependencies, `"dependencies"` and `"devDependencies"`:
+Ada dua jenis dependensi paket, `"dependencies"` dan `"devDependencies"`:
 
-**Dependencies** are libraries you need for your application to function (React, Redux, Lodash, jQuery, etc). You install them with `yarn add [package]`.
+**Dependencies** adalah kumpulan-kumpulan paket yang aplikasi anda butuhkan untuk berfungsi (React, Redux, Lodash, jQuery, dll). Anda dapat menginstal paket-paket tersebut dengan perintah `yarn add [paket]`.
 
-**Dev Dependencies** are libraries used during development or to build your application (Webpack, SASS, linters, testing frameworks, etc). You install those with `yarn add --dev [package]`.
+**Dev Dependencies** adalah kumpulan-kumpulan paket yang digunakan selama pengembangan atau pembuatan aplikasi anda (Webpack, SASS, linters, framework untuk testing, dll). Anda dapat menginstal paket-paket tersebut dengan perintah `yarn add --dev [paket]`.
 
-Next section: [02 - Babel, ES6, ESLint, Flow, Jest, Husky](02-babel-es6-eslint-flow-jest-husky.md#readme)
+Bab selanjutnya: [02 - Babel, ES6, ESLint, Flow, Jest, Husky](02-babel-es6-eslint-flow-jest-husky.md#readme)
 
-Back to the [table of contents](https://github.com/verekia/js-stack-from-scratch#table-of-contents).
+Kembali ke [Daftar Isi](https://github.com/verekia/js-stack-from-scratch#table-of-contents).
