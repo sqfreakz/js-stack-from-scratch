@@ -1,33 +1,33 @@
 # 02 - Babel, ES6, ESLint, Flow, Jest, and Husky
 
-Code for this chapter available [here](https://github.com/verekia/js-stack-walkthrough/tree/master/02-babel-es6-eslint-flow-jest-husky).
+File program untuk bab ini tersedia di [sini](https://github.com/verekia/js-stack-walkthrough/tree/master/02-babel-es6-eslint-flow-jest-husky).
 
-We're now going to use some ES6 syntax, which is a great improvement over the "old" ES5 syntax. All browsers and JS environments understand ES5 well, but not ES6. That's where a tool called Babel comes to the rescue!
+Sekarang kita akan menggunakan beberapa sintaks ES6, yang telah mengalami perkembangan lebih bagus dari sintaks sebelumnya ES5. Semua browser dan penerjemah JavaScript dapat menjalankan sintaks ES5 dengan baik, tetapi tidak dengan ES6. Oleh karena itu, sebuah program bernama Babel akan membantu kita!
 
 ## Babel
 
-> 💡 **[Babel](https://babeljs.io/)** is a compiler that transforms ES6 code (and other things like React's JSX syntax) into ES5 code. It is very modular and can be used in tons of different [environments](https://babeljs.io/docs/setup/). It is by far the preferred ES5 compiler of the React community.
+> 💡 **[Babel](https://babeljs.io/)** adalah sebuah compiler yang dapat mengubah kode ES6 (dan kode-kode lainnya seperti sintaks JSX dari React) menjadi kode ES5. Babel sangat modular dan dapat digunakan di berbagai [kondisi](https://babeljs.io/docs/setup/). Babel menjadi compiler ES5 yang paling disukai oleh komunitas React.
 
-- Move your `index.js` into a new `src` folder. This is where you will write your ES6 code. Remove the previous `color`-related code in `index.js`, and replace it with a simple:
+- Pindahkan file `index.js` anda ke folder baru bernama `src`. Di folder ini, anda akan menulis program ES6 anda. Hapus semua program yang berhubungan dengan `color` di file `index.js` anda, dan ubah itu menjadi:
 
 ```js
 const str = 'ES6'
 console.log(`Hello ${str}`)
 ```
 
-We're using a *template string* here, which is an ES6 feature that lets us inject variables directly inside the string without concatenation using `${}`. Note that template strings are created using **backquotes**.
+Kita akan menggunakan *template string* di sini, yang merupakan salah satu fitur dari ES6 yang mengijinkan anda untuk menulis variabel langsung di dalam sebuah string tanpa operator perangkai, dengan menggunakan `${}`. Sebagai catatan, template strings dibuat dengan menggunakan simbol **backquotes**.
 
-- Run `yarn add --dev babel-cli` to install the CLI interface for Babel.
+- Jalankan perintah `yarn add --dev babel-cli` untuk menginstal antarmuka CLI untuk Babel.
 
-Babel CLI comes with [two executables](https://babeljs.io/docs/usage/cli/): `babel`, which compiles ES6 files into new ES5 files, and `babel-node`, which you can use to replace your call to the `node` binary and execute ES6 files directly on the fly. `babel-node` is great for development but it is heavy and not meant for production. In this chapter we are going to use `babel-node` to set up the development environment, and in the next one we'll use `babel` to build ES5 files for production.
+Babel CLI hadir dengan [dua perintah eksekusi](https://babeljs.io/docs/usage/cli/): `babel`, yang meng-compile file-file ES6 menjadi file-file ES5 yang baru, dan `babel-node`, yang dapat anda gunakan untuk menggantikan panggilan binari `node` dan mengeksekusi file-file ES6 secara langsung. `babel-node` bagus di dalam pengembangan aplikasi, tetapi itu sangat berat dan tidak disarankan untuk penggunaan produksi. Di bab ini, kita akan menggunakan `babel-node` untuk mempersiapkan kondisi pengembangan, dan di bab berikutnya kita akan menggunakan  `babel` untuk membuat file ES5 di tahap produksi.
 
-- In `package.json`, in your `start` script, replace `node .` by `babel-node src` (`index.js` is the default file Node looks for, which is why we can omit `index.js`).
+- Di file `package.json`, di script `start` anda, gantikan `node .` dengan `babel-node src` (`index.js` adalah file standar yang dicari Node, itulah sebabnya kita bisa mengabaikan file `index.js`).
 
-If you try to run `yarn start` now, it should print the correct output, but Babel is not actually doing anything. That's because we didn't give it any information about which transformations we want to apply. The only reason it prints the right output is because Node natively understands ES6 without Babel's help. Some browsers or older versions of Node would not be so successful though!
+Jika anda mencoba menjalankan perintah `yarn start` sekarang, itu akan menghasilkan keluaran yang tepat, tetapi Babel sebenarnya tidak melakukan apa-apa. Itu disebabkan karena kita kita tidak memberikannya informasi apapun tentang perubahan apa yang kita inginkan. Alasan satu-satunya keluaran yang dihasilkan tepat adalah, karena Node secara alami mengerti ES6 tanpa bantuan Babel. Beberapa browser dan versi lama Node tidak akan mengenal ES6!
 
-- Run `yarn add --dev babel-preset-env` to install a Babel preset package called `env`, which contains configurations for the most recent ECMAScript features supported by Babel.
+- Jalankan `yarn add --dev babel-preset-env` untuk menginstall sebuah paket preset Babel yang dinamakan `env`, yang berisi konfigurasi fitur-fitur ECMAScript terkini yang didukung oleh Babel.
 
-- Create a `.babelrc` file at the root of your project, which is a JSON file for your Babel configuration. Write the following to it to make Babel use the `env` preset:
+- Buatlah sebuah file bernama `.babelrc` di folder root dari proyek aplikasi anda, yang isinya adalah file JSON untuk konfigurasi Babel anda. Tulis kode berikut ini agar Babel menggunakan preset dari `env`:
 
 ```json
 {
@@ -37,15 +37,15 @@ If you try to run `yarn start` now, it should print the correct output, but Babe
 }
 ```
 
-🏁 `yarn start` should still work, but it's actually doing something now. We can't really tell if it is though, since we're using `babel-node` to interpret ES6 code on the fly. You'll soon have a proof that your ES6 code is actually transformed when you reach the [ES6 modules syntax](#the-es6-modules-syntax) section of this chapter.
+🏁 `yarn start` seharusnya masih berlaku, tetapi terjadi sesuatu sekarang. Akan tetapi kita tidak bisa benar-benar mengetahui hal itu, karena kita menggunakan `babel-node` untuk mengkonversi ES6 secara langsung. Anda akan segera mendapatkan bukti bahwa kode ES6 anda sebenarnya telah berubah ketika anda membaca bagian [Sintaks Modul ES6](#the-es6-modules-syntax) di bab ini.
 
 ## ES6
 
-> 💡 **[ES6](http://es6-features.org/)**: The most significant improvement of the JavaScript language. There are too many ES6 features to list them here but typical ES6 code uses classes with `class`, `const` and `let`, template strings, and arrow functions (`(text) => { console.log(text) }`).
+> 💡 **[ES6](http://es6-features.org/)**: Peningkatan yang paling signifikan dari bahasa JavaScript. Ada banyak fitur-fitur ES6 yang dapat kita tulis di sini, tetapi khususnya ES6 menggunakan hal-hal berikut `class`, `const` dan `let`, template strings, dan fungsi panah (`(teks) => { console.log(teks) }`).
 
-### Creating an ES6 class
+### Membuat Sebuah Kelas Dengan ES6
 
-- Create a new file, `src/dog.js`, containing the following ES6 class:
+- Buatlah sebuah file, `src/dog.js`, yang berisi kelas ES6 sebagai berikut:
 
 ```js
 class Dog {
@@ -61,9 +61,9 @@ class Dog {
 module.exports = Dog
 ```
 
-It should not look surprising to you if you've done OOP in the past in any language. It's relatively recent for JavaScript though. The class is exposed to the outside world via the `module.exports` assignment.
+Anda tidak akan terkejut melihat ini jika anda telah berpengalaman dengan OOP. Akan tetapi, untuk JavaScript ini adalah hal yang baru. Kelas diekspos keluar dengan menggunakan pernyataan `module.exports`.
 
-In `src/index.js`, write the following:
+Di file `src/index.js`, tulislah sebagai berikut:
 
 ```js
 const Dog = require('./dog')
@@ -73,17 +73,17 @@ const toby = new Dog('Toby')
 console.log(toby.bark())
 ```
 
-As you can see, unlike the community-made package `color` that we used before, when we require one of our files, we use `./` in the `require()`.
+Seperti yang anda lihat, tidak seperti paket komunitas `color` yang kita gunakan sebelumnya, ketika kita membutuhkan sebuah file kita, kita menggunakan `./` di dalam `require()`.
 
-🏁 Run `yarn start` and it should print "Wah wah, I am Toby".
+🏁 Jalankan `yarn start` dan itu akan menghasilkan keluaran "Wah wah, I am Toby".
 
-### The ES6 modules syntax
+### Sintaks Module ES6
 
-Here we simply replace `const Dog = require('./dog')` by `import Dog from './dog'`, which is the newer ES6 modules syntax (as opposed to "CommonJS" modules syntax). It is currently not natively supported by NodeJS, so this is your proof that Babel processes those ES6 files correctly.
+Di sini kita akan mengganti `const Dog = require('./dog')` dengan `import Dog from './dog'`, yang adalah sintaks module ES6 yang lebih baru (yang berbeda dengan sintaks module "CommonJS"). Saat ini, sintaks ini tidak didukung oleh Node.js, tetapi inilah bukti bahwa Babel telah memproses file-file ES6 dengan tepat.
 
-In `dog.js`, we also replace `module.exports = Dog` by `export default Dog`
+Di file `dog.js`, kita juga akan mengganti `module.exports = Dog` dengan `export default Dog`
 
-🏁 `yarn start` should still print "Wah wah, I am Toby".
+🏁 `yarn start` seharusnya akan tetap menghasilkan keluaran "Wah wah, I am Toby".
 
 ## ESLint
 
@@ -327,6 +327,6 @@ All we have to do is to create two new tasks in `scripts`, `precommit` and `prep
 
 **Note**: If you are pushing right after a commit, you can use `git push --no-verify` to avoid running all the tests again.
 
-Next section: [03 - Express, Nodemon, PM2](03-express-nodemon-pm2.md#readme)
+Bab selanjutnya: [03 - Express, Nodemon, PM2](03-express-nodemon-pm2.md#readme)
 
-Back to the [previous section](01-node-yarn-package-json.md#readme) or the [table of contents](https://github.com/verekia/js-stack-from-scratch#table-of-contents).
+Kembali ke [bab sebelumnya](01-node-yarn-package-json.md#readme) atau [Daftar Isi](https://github.com/finly/js-stack-from-scratch#daftar-isi).
